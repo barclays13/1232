@@ -1,0 +1,14 @@
+body {
+    margin: 10px 50px;
+}
+
+.photo-person {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-person-img {
+    margin-bottom: 10px;
+    max-width: 250px;    
+    max-height: 250px;
+}
