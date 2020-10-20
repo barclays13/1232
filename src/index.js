@@ -2,9 +2,12 @@ let src = document.querySelector(".photo-person-src"),
   target = document.querySelector(".photo-person-img"),
   phone = document.querySelector(".data-person-phone"),
   name = document.querySelectorAll(".data-person-name"),
-  email = document.querySelector(".data-person-email");
-  let btnAddBlock = document.querySelectorAll(".add-block"),
-  btnAddDescription = document.querySelectorAll(".add-description");
+  email = document.querySelector(".data-person-email"),
+  btnAddBlock = document.querySelectorAll(".add-block"),
+  btnAddDescription = document.querySelectorAll(".add-description"),
+  infoPreson = document.querySelector(".info-preson"),
+  btnSaveResume = document.querySelector(".save-resume");
+
 
 const showImage = (src,target) => {
 
@@ -23,35 +26,33 @@ const validity = () => {
     element.addEventListener('input', () => element.value = element.value.replace(/[^а-яё]/iu, ''));
   });
   phone.addEventListener('input', () => phone.value = phone.value.replace(/[^0-9+]/, ''));
+
 }
 
-
-btnAddBlock.forEach( elem => 
-  elem.addEventListener('click', () => 
-    elem.insertAdjacentHTML('afterend', `        
-      <div class="info-preson-block">
-        <input class="info-preson-block-title" name="title" type="text" required placeholder="Название блока">
-        <button class="add-description">Добавить описание </button>
+const additionalInformation = () => {
+  infoPreson.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target.className === "add-block") {
+      target.insertAdjacentHTML('afterend', `        
+            <div class="info-preson-block">
+              <input class="info-preson-block-title" name="title" type="text" required placeholder="Название блока">
+              <button class="add-description">+ Добавить описание </button>
+              <div class="info-preson-block-description">
+                  <input class="info-preson-block-description-key" name="key" type="text" required placeholder="Заголовок поля...">
+                  <input class="info-preson-block-description-propetry" name="propetry" type="text" required placeholder="Содержание поля...">
+              </div>
+            </div>`)
+    } else if (target.className === "add-description") {
+      target.insertAdjacentHTML('afterend', `
         <div class="info-preson-block-description">
-            <input class="info-preson-block-description-key" name="key" type="text" required placeholder="Заголовок поля...">
-            <input class="info-preson-block-description-propetry" name="propetry" type="text" required placeholder="Содержание поля...">
-        </div>
-      </div>`
-    )
-  )
-);
-
-btnAddDescription.forEach( elem => 
-  elem.addEventListener('click', () => 
-    elem.insertAdjacentHTML('afterend', `
-      <div class="info-preson-block-description">
-        <input class="info-preson-block-description-key" name="key" type="text" required placeholder="Заголовок поля...">
-        <input class="info-preson-block-description-propetry" name="propetry" type="text" required placeholder="Содержание поля...">
-      </div>`
-    )
-  )
-)
+          <input class="info-preson-block-description-key" name="key" type="text" required placeholder="Заголовок поля...">
+          <input class="info-preson-block-description-propetry" name="propetry" type="text" required placeholder="Содержание поля...">
+        </div>`
+      )
+    }
+  })
+}
 
 showImage(src,target);
 validity(); 
- 
+additionalInformation();

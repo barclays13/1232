@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>Test Generation resume</title>
 </head>
-<body>
+<body id="file-item">
     <h1>Генератора резюме</h1>
     <section class="main">
         <div class='photo-person'>
@@ -26,18 +26,17 @@
     <section class="info-preson">
         <h2>Дополнительная информация:</h2>
 
-        <button class="add-block">Добавить блок </button>
+        <button class="add-block">+ Добавить новый блок </button>
         <div class="info-preson-block">
             <input class="info-preson-block-title" name="title" type="text" required placeholder="Название блока">
-            <button class="add-description">Добавить описание </button>
+            <button class="add-description"> + Добавить описание </button>
             <div class="info-preson-block-description">
-                <input class="info-preson-block-description-key" name="key" type="text" required placeholder="Заголовок поля...">
-                <input class="info-preson-block-description-propetry" name="propetry" type="text" required placeholder="Содержание поля...">
+                <input class="info-preson-block-description-key" value name="key" type="text" required placeholder="Заголовок поля...">
+                <input class="info-preson-block-description-propetry" value name="propetry" type="text" required placeholder="Содержание поля...">
             </div>
         </div>
     </section>
-
-
+    <button class="save-resume"> Сохранить резюме на компьютер  </button>
     <script type="text/javascript" src="./src/index.js"></script>
 </body>
 </html> 

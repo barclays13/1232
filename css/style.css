@@ -1,5 +1,6 @@
 body {
     margin: 10px 25%;
+    background: #eee;
 }
 
 h1 {
@@ -20,7 +21,9 @@ h1 {
 
 .photo-person-img {
     margin-bottom: 10px;
-    max-width: 250px;    
+
+    min-height: 200px;
+    width: auto;
     max-height: 250px;
 
 }
@@ -32,19 +35,35 @@ h1 {
 
 .data-person>input {
     margin-top: 5px;
-    width: 250px;
-    height: 20px;
+    width: 350px;
+    height: 30px;
     border: none;   
     border-bottom: solid 2px #000;
+}
+
+.info-preson>h2 {
+    text-align: center;
 }
 
 .info-preson-block {
     display: flex;
     flex-direction: column;
-    height: 50%;
-    width: 50%;
-    border: solid 1px #eee;
+    width: 100%;
+    border: solid 2px #000;
+    margin-bottom: 20px;
+}
+
+.info-preson-block>input {
     margin: 10px;
+
+}
+.add-block {
+    margin: 10px 25%;
+    width: 50%;
+}
+
+.add-description {
+    width: 100%;
 }
 
 .info-preson-block>.info-preson-block-title {
@@ -56,7 +75,19 @@ h1 {
 }
 
 .info-preson-block-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin: 5px;
-    width: 100%;
 }
 
+.info-preson-block-description>input {
+    width: 48%
+}
+
+.save-resume {
+    margin-bottom: 5%;
+    text-align: center;
+    width: 100%;
+    font-weight: 800;
+}
