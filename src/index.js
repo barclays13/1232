@@ -1,3 +1,5 @@
+'use strict';
+
 let src = document.querySelector(".photo-person-src"),
   target = document.querySelector(".photo-person-img"),
   phone = document.querySelector(".data-person-phone"),
@@ -9,16 +11,16 @@ let src = document.querySelector(".photo-person-src"),
   btnSaveResume = document.querySelector(".save-resume");
 
 
-const showImage = (src,target) => {
-    const fr = new FileReader();
-    fr.onload = () => target.src = fr.result;
+const showImage = (src, target) => {
+  const fr = new FileReader();
+  fr.onload = () => target.src = fr.result;
 
-    src.addEventListener("change", () => {
-      const formatImg = src.files[0].name.substr(-3, 3).toLowerCase();
-      (formatImg === 'jpg' || formatImg === 'png') ? fr.readAsDataURL(src.files[0]) : alert('Выберите фото')
-    })
+  src.addEventListener("change", () => {
+    const formatImg = src.files[0].name.substr(-3, 3).toLowerCase();
+    (formatImg === 'jpg' || formatImg === 'png') ? fr.readAsDataURL(src.files[0]): alert('Выберите фото')
+  })
 }
-  
+
 const validity = () => {
   email.addEventListener('input', () => email.value = email.value.replace(/[^a-z0-9+\@\.]/, ''));
   name.forEach((element) => {
@@ -46,8 +48,7 @@ const additionalInformation = () => {
         <div class="info-preson-block-description">
           <input class="info-preson-block-description-key" name="key" type="text" required placeholder="Заголовок поля:">
           <input class="info-preson-block-description-propetry" name="propetry" type="text" required placeholder="Содержание поля:">
-        </div>`
-      )
+        </div>`)
     }
   })
 }
@@ -70,10 +71,10 @@ btnSaveResume.addEventListener('click', () => {
     getBtns = document.querySelectorAll("button"),
     getPhoto = document.querySelector(".photo-person");
 
-  for (let i = 0; i< getAllInputs.length ;i++) {
+  for (let i = 0; i < getAllInputs.length; i++) {
 
     const newSpan = document.createElement('span'),
-        newH4 = document.createElement('h4');
+      newH4 = document.createElement('h4');
 
     newH4.textContent = getAllInputs[i].placeholder;
     getAllInputs[i].before(newH4);
@@ -81,12 +82,12 @@ btnSaveResume.addEventListener('click', () => {
     newSpan.style = "margin: auto; text-align: center";
     getAllInputs[i].before(newSpan);
 
-     getAllInputs[i].value ? newSpan.textContent = getAllInputs[i].value : newSpan.textContent = 'Пустое поле...'
+    getAllInputs[i].value ? newSpan.textContent = getAllInputs[i].value : newSpan.textContent = 'Пустое поле...'
 
     removeElement(getAllInputs[i]);
   }
 
-  for (let i = 0; i< getBtns.length ;i++) {
+  for (let i = 0; i < getBtns.length; i++) {
     removeElement(getBtns[i]);
   }
 
@@ -94,6 +95,6 @@ btnSaveResume.addEventListener('click', () => {
   saveDoc();
 })
 
-showImage(src,target);
-validity(); 
+showImage(src, target);
+validity();
 additionalInformation();
