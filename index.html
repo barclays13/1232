@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+
+
     <title>Test Generation resume</title>
 </head>
 <body id="file-item">
@@ -16,11 +18,11 @@
         </div>
         <div class="data-person">
             <h2>Основные данные:</h2>
-            <input class="data-person-name" name="surname" type="text" required placeholder="Фамилия...">
-            <input class="data-person-name" name="first-name" type="text" required placeholder="Имя...">
-            <input class="data-person-name" name="patronymic" type="text" required placeholder="Отчество...">
-            <input class="data-person-email" name="email" type="email" required placeholder="email...">
-            <input class="data-person-phone" type="tel" name="phone" id="phone" required placeholder="Номер телефона...">
+            <input class="data-person-name" name="surname" type="text" required placeholder="Фамилия:">
+            <input class="data-person-name" name="first-name" type="text" required placeholder="Имя:">
+            <input class="data-person-name" name="patronymic" type="text" required placeholder="Отчество:">
+            <input class="data-person-email" name="email" type="email" required placeholder="email:">
+            <input class="data-person-phone" type="tel" name="phone" id="phone" required placeholder="Номер телефона:">
         </div>
     </section>
     <section class="info-preson">
@@ -28,15 +30,20 @@
 
         <button class="add-block">+ Добавить новый блок </button>
         <div class="info-preson-block">
-            <input class="info-preson-block-title" name="title" type="text" required placeholder="Название блока">
+            <input class="info-preson-block-title" name="title" value='' type="text" required placeholder="Название блока">
             <button class="add-description"> + Добавить описание </button>
             <div class="info-preson-block-description">
-                <input class="info-preson-block-description-key" value name="key" type="text" required placeholder="Заголовок поля...">
-                <input class="info-preson-block-description-propetry" value name="propetry" type="text" required placeholder="Содержание поля...">
+                <input class="info-preson-block-description-key" value name="key" type="text" required placeholder="Заголовок поля:">
+                <input class="info-preson-block-description-propetry" value name="propetry" type="text" required placeholder="Содержание поля:">
             </div>
         </div>
     </section>
     <button class="save-resume"> Сохранить резюме на компьютер  </button>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
     <script type="text/javascript" src="./src/index.js"></script>
+
 </body>
 </html> 
